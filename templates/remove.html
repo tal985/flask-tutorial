@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<nav>
+	<a href = "/">Home</a> |
+	<a href = "/search">Search</a> |
+	<a href = "/insert">Insert</a> |
+	<a href = "#" onClick = "return false;">Remove</a> |
+	<a href = "/viewall">View All</a>
+</nav>
+
+<body>
+	<h2>Remove User by ID</h2>
+		<form method = "POST">
+			<input type = "number" name = "RemoveID" min = "1" required>
+			<input type = "submit" value = "Remove from Database">
+		</form>
+	<br>	
+	{% with messages = get_flashed_messages() %}
+	   {% if messages %}
+		  {% for message in messages %}
+			 {{ message }}
+		  {% endfor %}
+	   {% endif %}
+	{% endwith %}
+</body>
+
+</html>

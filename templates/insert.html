@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<nav>
+	<a href = "/">Home</a> |
+	<a href = "/search">Search</a> |
+	<a href = "#" onClick = "return false;">Insert</a> |
+	<a href = "/remove">Remove</a> |
+	<a href = "/viewall">View All</a>
+</nav>
+
+<body>
+    <h2>Insert New User (Name, Age)</h2>
+		<form method = "POST">
+			<input type = "text" name = "AddName" required>
+			<input type = "number" name = "AddAge" min="0" required>
+			<input type = "submit" value = "Add to Database">
+		</form>
+	<br>	
+	{% with messages = get_flashed_messages() %}
+	   {% if messages %}
+		  {% for message in messages %}
+			 {{ message }}
+		  {% endfor %}
+	   {% endif %}
+	{% endwith %}
+</body>
+
+
+
+</html>

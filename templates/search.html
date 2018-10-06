@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+table, th, td {
+    border: 1px solid black;
+	border-collapse: collapse;	
+}
+th, td {
+    padding: 10px;
+	text-align: left;
+}
+</style>
+
+<nav>
+	<a href = "/">Home</a> |
+	<a href = "#" onClick = "return false;">Search</a> |
+	<a href = "/insert">Insert</a> |
+	<a href = "/remove">Remove</a> |
+	<a href = "/viewall">View All</a>
+</nav>
+
+<body>
+	<h2>Search by Name</h2>
+		<form method = "POST">
+			<input type = "text" name = "SBName" required>
+			<input type = "submit" value = "Search">
+		</form>
+
+	<h2>Search by Age</h2>
+		<form method = "POST">
+			<input type = "number" name = "SBAge" min = "0" required>
+			<input type = "submit" value = "Search">
+		</form>
+	  
+	<h2>Search by ID</h2>
+		<form method = "POST">
+			<input type = "number" name = "SBID" min = "1" required>
+			<input type = "submit" value = "Search">
+		</form>
+	 
+	<h2>Database</h2>
+		<table class = "table table-bordered">
+			<thead>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Age</th>
+			</thead>
+			<tbody>
+			{% for user in users %}
+				<tr>
+					<td>{{user.id}}</td>
+					<td>{{user.name}}</td>
+					<td>{{user.age}}</td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+table, th, td {
+    border: 1px solid black;
+	border-collapse: collapse;	
+}
+th, td {
+    padding: 10px;
+	text-align: left;
+}
+</style>
+
+<nav>
+	<a href = "/">Home</a> |
+	<a href = "/search">Search</a> |
+	<a href = "/insert">Insert</a> |
+	<a href = "/remove">Remove</a> |
+	<a href = "#" onClick = "return false;">View All</a>
+</nav>
+
+	<body>	 
+		<h2>Database</h2>
+			<table class = "table table-bordered">
+				<thead>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Age</th>
+				</thead>
+				<tbody>
+				{% for user in users %}
+					<tr>
+						<td>{{user.id}}</td>
+						<td>{{user.name}}</td>
+						<td>{{user.age}}</td>
+					</tr>
+				{% endfor %}
+				</tbody>
+			</table>
+	</body>
+</html>
